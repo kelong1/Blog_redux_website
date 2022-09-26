@@ -1,0 +1,7 @@
+POST http://localhost:6000/app/addBlog
+
+{
+    "name":"zacha",
+    "email":"kelongzac@gmail.com",
+    "password":"123456",
+}

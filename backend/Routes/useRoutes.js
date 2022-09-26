@@ -12,8 +12,8 @@ router.post("/addBlog",async(req,res)=>{
     Bloguser
     .save()
     .then((res)=>{
-        res.status(201).json(res.data)
-          
+        res.json(res.data)
+        
     })
     .catch((err)=>{
         console.error(err)
