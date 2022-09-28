@@ -1,7 +1,7 @@
 POST http://localhost:6000/app/addBlog
+Content-Type: application/json
 
 {
     "name":"zacha",
     "email":"kelongzac@gmail.com",
-    "password":"123456",
-}
+    "password":"123456"
