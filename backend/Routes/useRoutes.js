@@ -1,21 +1,12 @@
 const express=require("express");
 const router=express.Router();
 const userSchema=require("../Models/userModel")
+const{RegisterUser,loginUser}=require("../Controllers/userControllers")
+const{protect}=require("../middlewares/authMiddleware")
 
 
-router.post("/addBlog",async(req,res)=>{
-    const {name,email,password}=req.body
-    try {
-        const user =await  userSchema.create({
-            name,
-            email,
-            password
-        })
-        res.status(200).json(user)
-        
-    } catch (error) {
-        console.error(error)
-    }
-})
+router.post("/register",RegisterUser)
+router.post("/login",loginUser)
+// router.get('/me',protect,getMe)
 
 module.exports=router;
