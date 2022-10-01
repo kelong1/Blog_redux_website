@@ -10,7 +10,7 @@ const BlogForm = () => {
             <textarea name="" id="" cols="30" rows="10" placeholder='Write your new Blog'className='form-control'></textarea>
             
             <button className='btn btn-dark'>Submit</button>
-            <p>Already have an account <a>Login here</a></p>
+            <p>Already have an account <a href='#'>Login here</a></p>
         </form>
     </div>
   )

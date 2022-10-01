@@ -1,14 +1,15 @@
 import React from 'react';
 import {BrowserRouter as Router ,Routes ,Route} from "react-router-dom"
-import BlogForm from './components/BlogForm/BlogForm';
+import BlogForm from './components/BlogForm';
 
 
 
-import Header from './components/Header/Header';
-import { Home } from './components/Home/Home';
-import Login from './components/Login/Login';
-import Register from './components/Register/Register';
+import Header from './components/Header';
+import { Home } from './components/Home';
+import Login from './components/Login';
+import Register from './components/Register';
 import "./App.css"
+import {ToastContainer} from "react-toastify"
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
     <Route path='/BlogForm' element={  <BlogForm/>}/>
     </Routes>
     </div>
+    <ToastContainer/>
     </Router>
   );
 }
