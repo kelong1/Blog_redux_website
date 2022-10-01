@@ -1,4 +1,4 @@
-const jwt=require("jsonwebtoken")
+const jwt=require('jsonwebtoken')
 
 const userSchema=require("../Models/userModel")
 
@@ -7,7 +7,7 @@ const protect=(async(req,res,next)=>{
 
     if(req.headers.authorization && req.headers.authorization.startsWith('Bearer')){
         try{
-            token=req.headers.authorization.split("")[1]
+            token=req.headers.authorization.split(" ")[1]
         
             const decoded=jwt.verify(token,process.env.JWT_SECRET)
             req.user=await userSchema.findById(decoded.id).select('-password')
@@ -18,7 +18,6 @@ const protect=(async(req,res,next)=>{
             res.status(401)
             throw new Error('Not authorized')
 
-
         }
     }
     if(!token){
@@ -27,4 +26,4 @@ const protect=(async(req,res,next)=>{
     }
 })
 
-module.exports=protect;
+module.exports={protect}

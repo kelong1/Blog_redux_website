@@ -14,21 +14,22 @@ function Register(){
     password:"",
     password2:""
   })
+  const {name,email,password,password2}=formData
   const navigate=useNavigate()
   const dispatch=useDispatch()
 
   const {user,isError,isSuccess,message}=useSelector((state)=>state.auth)
   useEffect(()=>{
     if(isError){
-      toast.error("message")
+      toast.error(message)
     }
-    if(isSuccess||user){
+    if(isSuccess || user){
       navigate("/")
     }
     dispatch(reset())
   },[user,isError,isSuccess,message,navigate,dispatch])
 
-  const {name,email,password,password2}=formData
+  
   const onChange=(e)=>{
       setFormData((prevState)=>({
         ...prevState,
@@ -53,7 +54,7 @@ function Register(){
 
   return (
     <div>
-        <form classname="registerForm" className='form-control'onSubmit={onSubmit}>
+        <form className="registerForm form-control" onSubmit={onSubmit}>
             <h2>Register</h2>
             <input type="text" id="name" name="name" value={name} placeholder='Enter your name'className='form-control' onChange={onChange}/>
             <input type="email"id="email" name="email" value={email} placeholder='Enter your email' className='form-control' onChange={onChange}/>

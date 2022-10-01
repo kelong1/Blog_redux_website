@@ -66,17 +66,23 @@ const loginUser=async(req,res)=>{
 
 }
 
-const  generateToken=(id)=>{
-    return jwt.sign({id},process.env.JWT_SECRET,{
+const  generateToken=(_id)=>{
+    return jwt.sign({_id},process.env.JWT_SECRET,{
         expiresIn:"30d",
     })
 } 
-// const getMe=(async(req,res)=>{
-//     res.json({message:"user"})
-// })
+ const getMe=(async(req,res)=>{
+    const{_id,name,email}=await userSchema.findById(req.user.id)
+
+    res.status(200).json({
+        _id,
+        name,
+        email
+    })
+ })
 
 module.exports={
     RegisterUser,
     loginUser,
-    // getMe
+    getMe
 }

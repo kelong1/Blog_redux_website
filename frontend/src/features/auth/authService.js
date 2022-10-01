@@ -1,9 +1,8 @@
-import axios from "axios";
+import axios from "axios"
 
-const URL="http://loacalhost:6000/app/users/"
-
+const API="http://localhost:9000/app/users/"
 const register=async(userData)=>{
-    const response=await axios.post(URL+"register",userData)
+    const response=await axios.post(API+"register",userData)
 
     if(response.data){
         localStorage.setItem('user',JSON.stringify(response.data))
@@ -12,7 +11,7 @@ const register=async(userData)=>{
     return response.data
 }
 const login=async(userData)=>{
-    const response=await axios.post(URL+"login",userData)
+    const response=await axios.post(API+"login",userData)
 
     if(response.data){
         localStorage.setItem('user',JSON.stringify(response.data))
@@ -20,10 +19,15 @@ const login=async(userData)=>{
 
     return response.data
 }
+const logout=async()=>{
+    localStorage.removeItem("user")
+
+}
 
 
 const authService={
     register,
-    login
+    login,
+    logout
 }
 export default  authService

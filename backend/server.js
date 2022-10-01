@@ -1,12 +1,13 @@
 const express=require("express");
 const app=express()
 
-
+const cors=require("cors")
 
 const mongoose=require("mongoose")
 const dotenv=require("dotenv");
 
 const RouteUrls=require("./Routes/useRoutes")
+const Blogs=require("./Routes/BlogRoutes")
 
 dotenv.config()
 
@@ -15,9 +16,10 @@ app.use((req,res,next)=>{
     console.log(req.path,req.method)
     next()
 })
+app.use(cors())
 
-
-app.use("/app",RouteUrls)
+app.use("/app/users",RouteUrls)
+app.use("/app/blogs",Blogs)
 
 mongoose.connect(process.env.DATABASE)
 .then(()=>{
