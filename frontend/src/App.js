@@ -1,6 +1,6 @@
 import React from 'react';
 import {BrowserRouter as Router ,Routes ,Route} from "react-router-dom"
-import BlogForm from './components/BlogForm';
+
 
 
 
@@ -20,7 +20,7 @@ function App() {
     <Route path="/" element={<Home/>}/>
     <Route path='/Register' element={<Register/>}/>
     <Route path='/Login' element={ <Login/>}/>
-    <Route path='/BlogForm' element={  <BlogForm/>}/>
+   
     </Routes>
     </div>
     <ToastContainer/>

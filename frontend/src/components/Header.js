@@ -36,9 +36,7 @@ function Header(){
                      </li></>)}
                
                 </ul>
-                <li>
-                <Link to="/BlogForm"className='li'>NewBlog</Link>
-                </li>
+               
                 
               
             </ul>

@@ -1,7 +1,7 @@
 import {createSlice, createAsyncThunk} from "@reduxjs/toolkit"
 import blogService from "../Blogs/blogService"
 
-const blog=JSON.parse(localStorage.getItem("blog"))
+//const blogs=JSON.parse(localStorage.getItem("blogs"))
 
 const initialState={
 
@@ -11,7 +11,7 @@ const initialState={
     isLoading:false,
     message:''
 }
-export const addBlog=createAsyncThunk("blogs/add",async(blog,thunkAPI)=>{
+export const addBlog=createAsyncThunk("blogs/add",async(blogs,thunkAPI)=>{
 try {
     return await blogService.addBlog(blogs)
 } catch (error) {
@@ -41,14 +41,14 @@ export const blogSlice=createSlice({
         .addCase(addBlog.fulfilled,(state,action)=>{
             state.isLoading=false
             state.isSuccess=true
-            state.user=action.payload
+            state.blogs=action.payload
             
         })
         .addCase(addBlog.rejected,(state,action)=>{
             state.isLoading=false
             state.isError=true
             state.message=action.payload
-            state.user=null
+            state.blogs=null
         })
        
     }

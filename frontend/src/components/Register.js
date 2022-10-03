@@ -24,7 +24,7 @@ function Register(){
       toast.error(message)
     }
     if(isSuccess || user){
-      navigate("/")
+      navigate("/Login")
     }
     dispatch(reset())
   },[user,isError,isSuccess,message,navigate,dispatch])

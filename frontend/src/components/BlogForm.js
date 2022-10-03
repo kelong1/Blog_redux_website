@@ -9,19 +9,22 @@ const BlogForm = () => {
       const[formData,setFormData]=useState({
         title:"",
         category:"",
-        blog:"",
+        Blog:"",
       })
 
-      const{title,category,blog}=formData
+      const{title,category,Blog}=formData
+      
 
       const navigate=useNavigate()
       const dispatch=useDispatch()
       const {blogs,isError,isSuccess,message}=useSelector((state)=>state.blogs)
+     
       useEffect(()=>{
+       
         if(isError){
           toast.error("message")
         }
-        if(isSuccess||blog){
+        if(isSuccess||blogs){
           navigate("/")
         }
         dispatch(reset())
@@ -42,7 +45,7 @@ const onSubmit=(e)=>{
   const blogData={
     title,
     category,
-    blog
+    Blog
   }
   dispatch(addBlog(blogData))
 }
@@ -51,14 +54,14 @@ const onSubmit=(e)=>{
 
   return (
     <div>
-        <form classname="blogForm" className='form-control' onSubmit={onSubmit}>
+        <form className="blogForm form-control" onSubmit={onSubmit}>
             <h2>Add a new Blog</h2>
-            <input type="text" placeholder='Enter your Title'className='form-control' onChange={onChange}/>
-            <input type="text" placeholder='Enter your category'className='form-control' onChange={onChange}/>
-            <textarea name="" id="" cols="30" rows="10" placeholder='Write your new Blog'className='form-control'onChange={onChange}></textarea>
+            <input type="text" id='title' name='title' placeholder='Enter your Title'className='form-control' onChange={onChange}/>
+            <input type="text" id="category" name="category" placeholder='Enter your category'className='form-control' onChange={onChange}/>
+            <textarea  cols="30" rows="10" id="Blog" name="Blog" placeholder='Write your new Blog'className='form-control'onChange={onChange}></textarea>
             
             <button className='btn btn-dark' type='submit'>Submit</button>
-            <p>Already have an account <a href='#'>Login here</a></p>
+            
         </form>
     </div>
   )
