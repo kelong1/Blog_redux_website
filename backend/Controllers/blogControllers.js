@@ -40,10 +40,18 @@ const getMyBlogs=async(req,res)=>{
    res.status(200).json(articles)
 }
 const deleteBlog=async(req,res)=>{
-   res.status(200).json({message:"object deleted"})
+    const article = await blogModel.findById(req.params.id)
 
+    if (!article) {
+      res.status(400)
+      throw new Error('article not found')
+    }
+  
+    await article.remove()
+  
+    res.status(200).json({ id: req.params.id })
 }
-const updateBlog=async(req,res)=>{
+const updateBlog=async(id)=>{
     const article=await blogModel.findById(req.params.id)
 
     if(!article){

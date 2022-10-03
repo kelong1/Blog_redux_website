@@ -58,7 +58,7 @@ const onSubmit=(e)=>{
             <h2>Add a new Blog</h2>
             <input type="text" id='title' name='title' placeholder='Enter your Title'className='form-control' onChange={onChange}/>
             <input type="text" id="category" name="category" placeholder='Enter your category'className='form-control' onChange={onChange}/>
-            <textarea  cols="30" rows="10" id="Blog" name="Blog" placeholder='Write your new Blog'className='form-control'onChange={onChange}></textarea>
+            <textarea  cols="10" rows="5" id="Blog" name="Blog" placeholder='Write your new Blog'className='form-control'onChange={onChange}></textarea>
             
             <button className='btn btn-dark' type='submit'>Submit</button>
             

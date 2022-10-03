@@ -11,9 +11,9 @@ const {
 }=require("../Controllers/blogControllers")
 
 router.post("/addBlog",addBlog)
-router.get("/getBlogs",protect,getBlogs)
+router.get("/getBlogs",getBlogs)
 router.get("/getMyBlogs",protect,getMyBlogs)
-router.delete(":/id",protect,deleteBlog)
+router.delete(":/id",deleteBlog)
 router.put(":/id",protect,updateBlog)
 
 

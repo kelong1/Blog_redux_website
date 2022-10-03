@@ -11,11 +11,17 @@ const addBlog=async(blogData)=>{
 
     return response.data
 }
+const getBlogs=async()=>{
+    const response=await axios.get(API+"getBlogs")
+
+    return response.data
+}
 
 
 
 const blogService={
-    addBlog
+    addBlog,
+    getBlogs
     
 }
 export default  blogService

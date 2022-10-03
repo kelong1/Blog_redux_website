@@ -39,3 +39,21 @@
   letter-spacing: 1px;
   text-decoration: none;
 }
+.BlogCard{
+  height: 300px;
+  width: 300px;
+  box-shadow: 2px 2px 2px 2px grey;
+  border-radius: 5px;
+}
+.BlogList{
+  height:50vh;
+  width: 100%;
+}
+.blogs{
+  height: 50vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+ overflow: hidden;
+
+}
