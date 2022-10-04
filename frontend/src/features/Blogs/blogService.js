@@ -16,12 +16,18 @@ const getBlogs=async()=>{
 
     return response.data
 }
+const deleteBlog=async(id)=>{
+    const response=await axios.delete(API+id)
+
+    return response.data
+}
 
 
 
 const blogService={
     addBlog,
-    getBlogs
+    getBlogs,
+    deleteBlog
     
 }
 export default  blogService

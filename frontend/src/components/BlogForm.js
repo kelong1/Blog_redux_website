@@ -48,6 +48,7 @@ const onSubmit=(e)=>{
     Blog
   }
   dispatch(addBlog(blogData))
+  setFormData("")
 }
 
 

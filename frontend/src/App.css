@@ -40,20 +40,22 @@
   text-decoration: none;
 }
 .BlogCard{
+  margin-top: 50px;
   height: 300px;
   width: 300px;
   box-shadow: 2px 2px 2px 2px grey;
   border-radius: 5px;
+  padding: 15px;
 }
 .BlogList{
-  height:50vh;
+ margin-left:5%;
   width: 100%;
 }
 .blogs{
   height: 50vh;
   width: 100%;
-  display: flex;
-  justify-content: space-around;
- overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  
 
 }

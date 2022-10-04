@@ -49,21 +49,21 @@ const deleteBlog=async(req,res)=>{
   
     await article.remove()
   
-    res.status(200).json({ id: req.params.id })
+    res.status(200).json({id: req.params.id})
 }
-const updateBlog=async(id)=>{
-    const article=await blogModel.findById(req.params.id)
+const updateBlog=async(req,res)=>{
+    // const article=await blogModel.findById(req.params.id)
 
-    if(!article){
-        res.status(400)
-        throw new Error('article not found')
-    }
+    // if(!article){
+    //     res.status(400)
+    //     throw new Error('article not found')
+    // }
    
 
-    const updatedArticle=await blogModel.findByIdAndUpdate(req.params.id,req.body,{
-        new:true,
-    })
-    res.status(200).json(updatedArticle)
+    // const updatedArticle=await blogModel.findByIdAndUpdate(req.params.id,req.body,{
+    //     new:true,
+    // })
+    // res.status(200).json(updatedArticle)
 }
 
 

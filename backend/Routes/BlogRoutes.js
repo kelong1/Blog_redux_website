@@ -13,8 +13,8 @@ const {
 router.post("/addBlog",addBlog)
 router.get("/getBlogs",getBlogs)
 router.get("/getMyBlogs",protect,getMyBlogs)
-router.delete(":/id",deleteBlog)
-router.put(":/id",protect,updateBlog)
+router.delete('/:id',deleteBlog)
+router.put('/:id',updateBlog)
 
 
 module.exports=router

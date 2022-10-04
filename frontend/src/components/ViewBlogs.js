@@ -1,6 +1,9 @@
 import React from 'react'
+import { deleteBlog } from '../features/Blogs/blogSlice'
+import{useDispatch} from "react-redux"
 
 function ViewBlogs({blog}) {
+  const dispatch=useDispatch()
   return (
     <div className='BlogCard'>
         <div>
@@ -9,7 +12,7 @@ function ViewBlogs({blog}) {
         <h3>{blog.title}</h3>
         <h3>{blog.category}</h3>
         <p>{blog.Blog}</p>
-        <button>Delete</button>
+        <button onClick={()=>dispatch(deleteBlog(blog._id))}>Delete</button>
         <button>update</button>
     </div>
   )
