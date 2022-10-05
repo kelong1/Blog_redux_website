@@ -61,7 +61,7 @@ const onSubmit=(e)=>{
             <input type="text" id="category" name="category" placeholder='Enter your category'className='form-control' onChange={onChange}/>
             <textarea  cols="10" rows="5" id="Blog" name="Blog" placeholder='Write your new Blog'className='form-control'onChange={onChange}></textarea>
             
-            <button className='btn btn-dark' type='submit'>Submit</button>
+            <button className='btn btn-block' type='submit'>Submit</button>
             
         </form>
     </div>

@@ -27,7 +27,10 @@ export function Home() {
   return (
     <div>
         Welcome {user && user.name}
+        <div className='blogpart'>
         <BlogForm/>
+        </div>
+      
         <section className='BlogList'>
           {blogs.length> 0 ?(<div className='blogs'>
             {blogs.map((blog)=>{

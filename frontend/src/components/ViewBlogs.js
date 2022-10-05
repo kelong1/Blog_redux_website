@@ -12,8 +12,8 @@ function ViewBlogs({blog}) {
         <h3>{blog.title}</h3>
         <h3>{blog.category}</h3>
         <p>{blog.Blog}</p>
-        <button onClick={()=>dispatch(deleteBlog(blog._id))}>Delete</button>
-        <button>update</button>
+        <button className='btn btn-block' onClick={()=>dispatch(deleteBlog(blog._id))}>Delete</button>
+        
     </div>
   )
 }

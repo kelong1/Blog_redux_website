@@ -53,14 +53,14 @@ function Register(){
   
 
   return (
-    <div>
+    <div className='registerFormDiv'>
         <form className="registerForm form-control" onSubmit={onSubmit}>
-            <h2>Register</h2>
+            <h2>Register Form</h2>
             <input type="text" id="name" name="name" value={name} placeholder='Enter your name'className='form-control' onChange={onChange}/>
             <input type="email"id="email" name="email" value={email} placeholder='Enter your email' className='form-control' onChange={onChange}/>
             <input type="password" id="password" name="password" value={password} placeholder='Enter your password'className='form-control' onChange={onChange}/>
             <input type="password" id="password2" name="password2" value={password2} placeholder='Confirm your password' className='form-control' onChange={onChange}/>
-            <button className='btn btn-dark' type='submit'>Register</button>
+            <button className='btn btn-block' type='submit'>Register</button>
             <p>Already have an account <Link to="/Login">Login here</Link></p>
         </form>
     </div>
