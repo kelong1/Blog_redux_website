@@ -23,7 +23,7 @@ app.use("/app/users",RouteUrls)
 app.use("/app/blogs",Blogs)
 
 
-mongoose.connect(process.env.DATABASE)
+mongoose.connect(process.env.DATABASE,{useNewUrlParser: true, useUnifiedTopology: true})
 .then(()=>{
     app.listen(process.env.PORT,()=>{console.log(" database connected and listening on port 6000")})
 })
