@@ -72,13 +72,10 @@ const  generateToken=(_id)=>{
     })
 } 
  const getMe=(async(req,res)=>{
-    const{_id,name,email}=await userSchema.findById(req.user.id)
-
-    res.status(200).json({
-        _id,
-        name,
-        email
-    })
+   
+    res.status(200).json(req.user)
+      
+    
  })
 
 module.exports={

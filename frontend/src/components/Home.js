@@ -17,7 +17,8 @@ export function Home() {
       console.log(message)
     }
       if(!user){
-        navigate("/login")
+        navigate("/Login")
+
       }
     dispatch(getBlogs())
     return () => {
@@ -26,7 +27,8 @@ export function Home() {
   },[user,isError,message,dispatch,navigate])
   return (
     <div>
-        Welcome {user && user.name}
+      
+        Welcome<h1>{user && user.name}</h1>
         <div className='blogpart'>
         <BlogForm/>
         </div>

@@ -13,7 +13,8 @@ const initialState={
 }
 export const addBlog=createAsyncThunk("blogs/add",async(blogs,thunkAPI)=>{
 try {
-    return await blogService.addBlog(blogs)
+    const token=thunkAPI.getState().auth.user.token
+    return await blogService.addBlog(blogs,token)
 } catch (error) {
     const message=(error.response && error.response.data && error.response.data.message) || error.message || error.toString()
     return thunkAPI.rejectWithValue(message)
@@ -22,7 +23,8 @@ try {
 })
 export const getBlogs=createAsyncThunk("blogs/get",async(_,thunkAPI)=>{
     try {
-        return await blogService.getBlogs()
+        const token=thunkAPI.getState().auth.user.token
+        return await blogService.getBlogs(token)
     } catch (error) {
         const message=(error.response && error.response.data && error.response.data.message) || error.message || error.toString()
         return thunkAPI.rejectWithValue(message)
@@ -31,7 +33,8 @@ export const getBlogs=createAsyncThunk("blogs/get",async(_,thunkAPI)=>{
     })
     export const deleteBlog=createAsyncThunk("blogs/delete",async(id,thunkAPI)=>{
         try {
-            return await blogService.deleteBlog(id)
+            const token=thunkAPI.getState().auth.user.token
+            return await blogService.deleteBlog(id,token)
         } catch (error) {
             const message=(error.response && error.response.data && error.response.data.message) || error.message || error.toString()
             return thunkAPI.rejectWithValue(message)
