@@ -10,6 +10,7 @@ import Login from './components/Login';
 import Register from './components/Register';
 import "./App.css"
 import {ToastContainer} from "react-toastify"
+// import Dashboard from './components/Dashboard';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
     <div className="App">
      <Header/>
    <Routes>
+    {/* <Route path="/" element={<Dashboard/>}/> */}
     <Route path="/" element={<Home/>}/>
     <Route path='/Register' element={<Register/>}/>
     <Route path='/Login' element={ <Login/>}/>

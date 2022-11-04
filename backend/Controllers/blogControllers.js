@@ -1,5 +1,6 @@
 
 const blogModel=require("../Models/blogModel")
+const bloguser=require("../Models/userModel")
 
 
 
@@ -11,7 +12,7 @@ const addBlog=async(req,res)=>{
             throw new Error(" Please add all fields")
         }
         const article=await blogModel.create({
-            
+         
             title,
             category,
             Blog

@@ -26,21 +26,23 @@ export function Home() {
     }
   },[user,isError,message,dispatch,navigate])
   return (
-    <div>
+    <div className='home'>
       
-        Welcome<h1>{user && user.name}</h1>
+       <div>
+       Welcome<h1>{user && user.name}</h1>
+       </div>
         <div className='blogpart'>
         <BlogForm/>
         </div>
       
-        <section className='BlogList'>
+        <div className='BlogList'>
           {blogs.length> 0 ?(<div className='blogs'>
             {blogs.map((blog)=>{
               return(
               <ViewBlogs key={blog._id} blog={blog}/>)
             })}
           </div>):(<h3>No blogs uploaded yet</h3>)}
-        </section>
+        </div>
     </div>
   )
 }

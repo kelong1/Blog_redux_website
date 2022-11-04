@@ -83,3 +83,21 @@
   background-color: black;
   color: white;
 }
+@media screen and (max-width:600px) {
+  .BlogList{
+    
+     width: 100%;
+   }
+  .blogs{
+    display: flex;
+    flex-direction: column;
+    height: auto;
+  }
+  .home{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  
+}
